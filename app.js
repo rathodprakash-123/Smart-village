@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const middelware = require("./middleware");
+const port = 3000;
 
 const indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/user");
@@ -43,12 +44,9 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // Routes
 app.use("/", indexRoutes);
 app.use("/", userRoutes);
 app.use("/admin",adminRoutes);
 
-
-const port = 3000;
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`)); 
