@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Village Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/images/portfolia website.jpg"/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/vlog.css">
+  <script src="/js/script.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+</script>
+</head>
+<body>
+<header>
+  <p style="text-align: center; color: rgb(252, 252, 252);"><i class="fa-solid fa-clock" style="color: rgb(252, 252, 252); margin-right: 5px;"></i><%= new Date().toLocaleString() %></p>
+  <nav class="navbar">
+    <div class="logo">Smart village</div>
+    <!-- <p><%= new Date().toLocaleString() %></p> -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/vlog">Blog</a></li>
+      <li><a href="/admin">Dashboard</a></li>
+      <% if(!isLoggedIn){ %>
+      <li><a href="/login">Login</a></li>
+      <% }else{ %>
+      <li><a href="/complaint">Complaint</a></li>
+      <li><a href="/logout">Logout</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
+
+  <main>

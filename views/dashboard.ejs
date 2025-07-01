@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<!-- Admin-only: Post Announcement -->
+<% if (session.role === 'admin') { %>
+  <section>
+    <h2> Post Announcement</h2>
+    <form action="/announcement" method="POST">
+      <input name="title" placeholder="Enter title" required />
+      <textarea name="content" placeholder="Enter content" required></textarea>
+      <button>Announce</button>
+    </form>
+  </section>
+
+  <!-- Admin-only: Add Blog -->
+  <section>
+    <h2>Add Vlog</h2>
+    <form action="/vlog" method="POST" enctype="multipart/form-data">
+      <input name="head" placeholder="Heading" required />
+      <input type="file" name="image" accept="image/*" required />
+      <textarea name="context" placeholder="Description" required></textarea>
+      <button>Add Blog</button>
+    </form>
+  </section>
+<% } %>
+
+<!-- User-only: Submit Complaint -->
+<% if (session.role === 'user') { %>
+  <section>
+    <h2> Submit Complaint</h2>
+    <form action="/complaint" method="POST">
+      <input name="name" placeholder="Your Name" required />
+      <textarea name="message" placeholder="Your complaint" required></textarea>
+      <button>Submit</button>
+    </form>
+  </section>
+<% } %>
+
+<!--  Announcements for all -->
+<% if (announcements.length > 0) { %>
+  <section>
+    <h2> Announcements</h2>
+    <% announcements.forEach(a => { %>
+      <div>
+        <strong><%= a.title %></strong>
+        <p><%= a.content %></p>
+        <small><%= a.date.toDateString() %></small>
+
+        <% if (session.role === 'admin') { %>
+          <form action="/announcement/<%= a._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+        <% } %>
+      </div>
+    <% }) %>
+  </section>
+<% } %>
+
+<!-- Vlogs for all -->
+  <% if (session.role === 'admin') { %>
+<% if (vlogs.length > 0) { %>
+  <section>
+    <h2>Blogs</h2>
+    <% vlogs.forEach(v => { %>
+      <div>
+        <h4><%= v.head %></h4>
+        <img src="<%= v.image %>" width="200px" />
+        <p><%= v.context %></p>
+          <form action="/vlog/<%= v._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form>
+      </div>
+    <% }) %>
+  </section>
+<% } %>
+<% } %>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,55 @@
+    <%- include('partials/header') %>
+
+<section class="vlog-section">
+  <h2 class="vlog-title"> Daily LifeStyle Of Villagers</h2>
+
+  <!-- Vlog 1 -->
+  <div class="vlog-card">
+    <div class="vlog-image">
+      <img src="/images/education.jpg" alt="Vlog 1 Image" />
+    </div>
+    <div class="vlog-content">
+      <h3> Our Village Education System – A Glimpse of Growth</h3>
+      <p>where the roots of education are growing stronger each day. We have both government and small private schools that serve children from nearby areas. Many students walk or cycle to school every day, showing their dedication to learning. The classrooms may be simple, but they are full of energy and dreams. Teachers here not only teach subjects like Maths, Science, and Language but also inspire students with stories of success and values of hard work. Midday meals are provided to keep children healthy and motivated. Digital learning is slowly making its way, with some classrooms now using smartphones or projectors to make learning fun. Our village may be small, but our education system is built on big dreams — dreams of creating doctors, teachers, engineers, and leaders of tomorrow, right from the heart of our land.</p>
+    </div>
+  </div>
+
+  <!-- Vlog 2 -->
+  <div class="vlog-card">
+    <div class="vlog-image">
+      <img src="/images/agriculture.jpg" alt="Vlog 2 Image" />
+    </div>
+    <div class="vlog-content">
+      <h3>Agriculture in Our Village – The Heart of Our Life</h3>
+      <p>Agriculture is the lifeline of our village. Most families here are directly connected to farming, and the fields around us are filled with crops like wheat, cotton, millet, groundnut, and vegetables depending on the season. Farmers begin their day early, working hard under the sun, relying on traditional knowledge passed down through generations, along with modern tools like tractors, drip irrigation, and even mobile apps for weather updates. Monsoon plays a major role, but farmers have also started using borewells and check dams to manage water better. The village also has small dairy farms and poultry that support livelihoods. Agriculture here isn’t just a job — it’s a way of life, deeply connected to the soil, culture, and festivals we celebrate. Through organic practices and awareness about sustainable farming, our village is moving towards a greener and more prosperous future.</p>
+    </div>
+    </div>
+  <!-- Vlog 2 -->
+  <div class="vlog-card">
+        <div class="vlog-image">
+      <img src="/images/fisherman.jpg" alt="Vlog 2 Image" />
+    </div>
+    <div class="vlog-content">
+      <h3>Fishing in Our Village – A Source of Food and Livelihood</h3>
+      <p>Fishing is an important part of life in our village, especially for families living near rivers, ponds, or small lakes. Early in the morning, local fishermen set out with their nets and boats, using traditional techniques along with some modern tools. For many, fishing is not just a source of food, but also a livelihood that supports their families. People catch fish like rohu, catla, tilapia, and even small prawns during certain seasons. The fish caught is either sold in local markets or used fresh in home-cooked meals. In recent years, some villagers have also started fish farming, raising fish in tanks or small ponds, which brings in extra income. Fishing in our village is a beautiful mix of tradition and sustainability — a quiet but essential part of our rural economy and culture.</p>
+    </div>
+  </div>
+  <% if(vlogs.length != 0) { %>
+    <% vlogs.forEach(v => { %>
+    <div class="vlog-card">
+      <div class="vlog-image">
+        <img src="<%= v.image %>" alt="Vlog 2 Image" />
+      </div>
+      <div class="vlog-content">
+      <h3><%= v.head %></h3>
+      <p><%= v.context %></p>
+      </div>
+      </div>
+      <% }) %>
+  <% } %>
+
+</section>
+
+
+
+    <%- include('partials/footer') %>

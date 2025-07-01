@@ -1,0 +1,44 @@
+
+.footer-modern {
+  background-color: #0b0c10;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-brand h2 {
+  color: 	#313131;
+  font-size: 2rem;
+}
+
+.footer-social a {
+  color: 	#313131;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+
+.footer-social a:hover {
+  color: 	#3a3434;
+}
+
+.footer-newsletter input {
+  padding: 0.5rem;
+  width: 200px;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}

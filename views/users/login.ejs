@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<section>
+  <div>
+  <form action="/login" method="POST" >
+    <h2>Login</h2>
+    <input name="email" type="email" placeholder="Email" required >
+    <input name="password" type="password" placeholder="Password" required>
+    <p class="mt-2">
+    <a href="/forgot-password" >Forgot Password?</a>
+    </p>
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="/signup" style="color:#0d7108 ;">Signup</a></p>
+  </form>
+</div>
+</section>
+<%- include('../partials/footer') %>
