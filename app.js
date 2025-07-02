@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require("express");
 const app = express();
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -26,16 +27,22 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+
 const sessionOptions = {
-    secret:process.env.SECRET,
-    resave: false,
-    saveUninitialized:true,
-    cookie:{
-        expires:Date.now()+ 7*24*60*60*1000,
-        maxAge:7*24*60*60*1000,
-        httpOnly: true,
-    },
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGOATLAS,
+    collectionName: 'sessions'
+  }),
+  cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
+  },
 };
+
 app.use(session(sessionOptions));
 app.use((req, res, next) => {
   res.locals.isLoggedIn = !!req.session.userId; // true if logged in
