@@ -8,16 +8,8 @@ const ViewCount = require("../models/ViewCount");
 const methodOverride = require("method-override");
 const multer = require("multer");
 const path = require("path");
+const { storage } = require("../config/cloudinary");
 
-// Configure storage
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "public/uploads"); // Folder where images are saved
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
-  },
-});
 
 const upload = multer({ storage });
 
@@ -82,7 +74,7 @@ router.get("/vlog",async(req,res)=>{
 router.post("/vlog",upload.single("image"),async (req, res) => {
   console.log(req.body);
   const {head,context } = req.body;
-  const imagePath = "/uploads/" + req.file.filename;
+  const imagePath = req.file.path;
   await Vlog.create({ head, image: imagePath, context });
   res.redirect("/vlog");
 });
