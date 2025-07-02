@@ -8,7 +8,7 @@ const ViewCount = require("../models/ViewCount");
 const methodOverride = require("method-override");
 const multer = require("multer");
 const path = require("path");
-const { storage } = require("../config/cloudinary");
+const {storage} = require("../cloudConfig.js");
 
 
 const upload = multer({ storage });
