@@ -16,7 +16,7 @@ const userRoutes = require("./routes/user");
 const adminRoutes = require("./routes/admin");
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/smart-village')
+mongoose.connect(process.env.MONGOATLAS)
   .then(() => console.log("DB connected"))
   .catch(err => console.log(err));
 
