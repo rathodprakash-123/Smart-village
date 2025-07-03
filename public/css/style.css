@@ -48,19 +48,31 @@ nav {
 .nav-links li {
   transition: transform 0.2s ease;
 }
-
 .nav-links a {
+  position: relative;
   text-decoration: none;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  color: white;
+  padding: 8px 12px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  background-color: #f3f6f4;
-  color: #111;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
 }
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
 /* Hamburger icon - hidden by default, shown on small screens */
 .menu-toggle {
   display: none;
