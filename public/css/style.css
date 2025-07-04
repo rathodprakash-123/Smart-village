@@ -13,6 +13,8 @@ html, body {
 header {
   /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
   background-color:	#313131;
+  
+  /* background-image: url("10220807.jpg"); */
   /* background:linear-gradient(#313131,#f9fafc); */
   color: #fff;
   padding: 1rem 2rem;
@@ -51,7 +53,7 @@ nav {
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: white;
+  color: #fff;
   padding: 8px 12px;
   font-weight: 500;
   transition: color 0.3s;
