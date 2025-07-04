@@ -29,6 +29,10 @@ router.get("/", async (req, res) => {
   res.render("index",{announcements,views: counter.count});
 });
 
+router.get("/scheme",(req,res)=>{
+  res.render("Scheme");
+});
+
 //complaints
 
 router.post("/complaint",async (req, res) => {
