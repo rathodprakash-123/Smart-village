@@ -32,8 +32,8 @@ router.get("/", async (req, res) => {
 //complaints
 
 router.post("/complaint",async (req, res) => {
-  const { name, description } = req.body;
-  await Complaint.create({ name, description });
+  const { name,address,description } = req.body;
+  await Complaint.create({ name, address,description });
   res.redirect("/complaint");
 });
 router.get("/complaint",isLoggedIn,async(req,res)=>{

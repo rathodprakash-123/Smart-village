@@ -3,6 +3,7 @@
       <h2><i class="fa-solid fa-scroll" style="margin-right: 8px;"></i>Submit a Complaint</h2>
       <form action="/complaint" method="POST">
         <input name="name" placeholder="Your Name" required />
+        <textarea name="address" placeholder="Enter Address" required></textarea>
         <textarea name="description" placeholder="Describe issue" required></textarea>
         <button>Complaint</button>
       </form>
@@ -12,11 +13,12 @@
       <h2>Complaints</h2>
         <% complaints.forEach(c => { %>
           <div>
-            <p><b><%= c.name %></b></p>
+            <p style="font-size: larger;"><b><%= c.name %></b></p>
+            <p><%= c.address %></p>
             <p><%= c.description %></p>
             <p><%= c.date.toDateString() %></p>
             <form action="/complaint/<%= c._id %>?_method=DELETE" method="post">
-            <button style="width:150px; height: 50px;">delete</button>
+            <button style="width:100px; height: 45px; font-size: small;">delete</button>
             </form>
           </div>
         <% }) %>

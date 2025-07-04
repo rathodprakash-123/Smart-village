@@ -121,7 +121,7 @@ main {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #9ec79e;
+  background-color: #a2c79e;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -310,7 +310,7 @@ section {
   padding: 2rem;
   background: #f9f9f9;
   border-radius: 16px;
-  box-shadow: 0 4px 20px 	#313131;
+  box-shadow: 0 4px 20px 	#939292d4;
 }
 
 section h2 {
@@ -345,8 +345,8 @@ form textarea:focus {
 }
 
 form button {
-  background-color: 	#313131;
-  color: 	#f9fafc;
+  background-color: #d6ebff;
+  color: 	#313131;
   border: none;
   padding: 0.9rem;
   border-radius: 12px;
@@ -356,7 +356,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #f3f5f2;
+  background-color: #9fcffb;
   color: 	#313131;
   font-weight:530;
 }
