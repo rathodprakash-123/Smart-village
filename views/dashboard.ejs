@@ -13,7 +13,7 @@
 
   <!-- Admin-only: Add Blog -->
   <section>
-    <h2>Add Vlog</h2>
+    <h2>Add Blog</h2>
     <form action="/vlog" method="POST" enctype="multipart/form-data">
       <input name="head" placeholder="Heading" required />
       <input type="file" name="image" accept="image/*" required />
@@ -29,6 +29,7 @@
     <h2> Submit Complaint</h2>
     <form action="/complaint" method="POST">
       <input name="name" placeholder="Your Name" required />
+      <textarea name="address" placeholder="Enter Address" required></textarea>
       <textarea name="message" placeholder="Your complaint" required></textarea>
       <button>Submit</button>
     </form>
