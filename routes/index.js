@@ -75,6 +75,7 @@ router.get("/vlog",async(req,res)=>{
   const vlogs = await Vlog.find().sort({ date: -1 });
   res.render("vlog",{vlogs});
 });
+
 router.post("/vlog",upload.single("image"),async (req, res) => {
   console.log(req.body);
   const {head,context } = req.body;
@@ -82,6 +83,7 @@ router.post("/vlog",upload.single("image"),async (req, res) => {
   await Vlog.create({ head, image: imagePath, context });
   res.redirect("/vlog");
 });
+
 router.delete("/vlog/:id",async(req,res)=>{
   let {id} = req.params;
   await Vlog.findByIdAndDelete(id);

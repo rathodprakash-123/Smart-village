@@ -1,69 +1,64 @@
-  <%- include('partials/header') %>
-
-<div class="slideshow-container" style="max-width:100%; position:relative; margin:auto;">
-
-  <div class="mySlides fade">
-    <img src="/images/farm.jpg" style="width:100%; height: 450px; object-fit:cover;">
+<%- include('partials/header') %>
+<style></style>
+<div class="carousel-container" id="carousel">
+  <div class="carousel-slide">
+    <img src="/images/farm.jpg" alt="Farm" draggable="false" />
+    <img src="/images/fisherman.jpg" alt="Fisherman" draggable="false" />
+    <img src="/images/education.jpg" alt="Education" draggable="false" />
   </div>
 
-  <div class="mySlides fade">
-    <img src="/images/fisherman.jpg" style="width:100%; height: 450px; object-fit:cover;">
-  </div>
+  <button class="prev" aria-label="Previous slide">&#10094;</button>
+  <button class="next" aria-label="Next slide">&#10095;</button>
 
-  <div class="mySlides fade">
-    <img src="/images/education.jpg" style="width:100%; height:450px; object-fit:cover;">
+  <!-- dots are inside the container so they overlay the image bottom -->
+  <div class="dots" aria-hidden="true">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
   </div>
-
 </div>
 
-<div style="text-align:center; margin-top:10px;">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
 <% if(announcements.length !=0) {%>
 <div class="announcement-ticker">
   <div class="ticker-track">
     <% announcements.forEach(a => { %>
-      <div class="ticker-item">
-       <i class="fa-solid fa-bullhorn"></i> <%= a.content %>
-      </div>
+    <div class="ticker-item">
+      <i class="fa-solid fa-bullhorn"></i> <%= a.content %>
+    </div>
     <% }) %>
   </div>
 </div>
 <% } %>
 
 <div class="skills-section">
-      <div class="skill-card">
-        <i class="fa-solid fa-users"></i>
-        <h3>3397+</h3>
-        <p>Population</p>
-      </div>
-      <div class="skill-card">
-      <i class="fa-solid fa-eye"></i>
-      <h3><%= views %>+</h3>
-      <p>Website view</p>
-      </div>
-      <div class="skill-card">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <h3>929.81</h3>
-        <p>Area hectares</p>
-      </div>
-</div>
-  <h2 class="text-2xl font-bold mb-4 text-center"> &nbsp;Our Village Location</h2>
-  <div class="flex justify-center" >
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3544.939282893457!2d71.1955985250252!3d20.812704180783093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1751604342494!5m2!1sen!2sin"
-      width="80%" 
-      height="450" 
-      style="box-shadow: 0 8px 20px rgba(131, 129, 129, 0.715);" 
-      allowfullscreen="" 
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      class="rounded-lg shadow-lg"
-    ></iframe>
+  <div class="skill-card">
+    <i class="fa-solid fa-users"></i>
+    <h3>3397+</h3>
+    <p>Population</p>
   </div>
+  <div class="skill-card">
+    <i class="fa-solid fa-eye"></i>
+    <h3><%= views %>+</h3>
+    <p>Website view</p>
+  </div>
+  <div class="skill-card">
+    <i class="fa-solid fa-map-location-dot"></i>
+    <h3>929.81</h3>
+    <p>Area hectares</p>
+  </div>
+</div>
+<h2 class="text-2xl font-bold mb-4 text-center">&nbsp;Our Village Location</h2>
+<div class="flex justify-center">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.5243479921987!2d71.19591531580137!3d20.81268312846897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2555e8030ae5b%3A0x2e0ee8727c9927c7!2sManekpur%2C%20Gujarat%20365730!5e1!3m2!1sen!2sin!4v1754736524210!5m2!1sen!2sin"
+    width="80%"
+    height="450"
+    style="box-shadow: 0 8px 20px rgba(131, 129, 129, 0.715)"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    class="rounded-lg shadow-lg"
+  ></iframe>
+</div>
 
-  
-  <%- include('partials/footer') %>
-
+<%- include('partials/footer') %>

@@ -24,7 +24,8 @@
 </head>
 <body>
 <header>
-  <p style="text-align: center; color: rgb(252, 252, 252);"><i class="fa-solid fa-clock" style="color: rgb(252, 252, 252); margin-right: 5px;"></i><%= new Date().toLocaleString() %></p>
+  <p style="text-align: center; color: rgb(252, 252, 252);"><i class="fa-solid fa-clock" style="color: rgb(252, 252, 252); margin-right: 5px;"></i><%= new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) %>
+</p>
   <nav class="navbar">
     <div class="logo">Smart village</div>
     <!-- <p><%= new Date().toLocaleString() %></p> -->
