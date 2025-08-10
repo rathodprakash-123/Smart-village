@@ -129,8 +129,8 @@ main {
   /* ensure each image takes full viewport of the container */
   .carousel-slide img {
     min-width: 100%;
-    height: 450px;
-    object-fit: cover;
+    height: 550px;
+    object-fit: fill;
     display: block;
     user-select: none;
     -webkit-user-drag: none;
